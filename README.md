@@ -6,4 +6,4 @@ Make sure if you use this code you protect your communications to/from Twilio by
 
 This example uses HTTPS URLs, password protected URL's and "From" checks to only allow approved phone numbers. 
 
-http://cbackes.com/?p=1401&preview=true
+http://cbackes.com/twilio-sms-powered-garage-door
