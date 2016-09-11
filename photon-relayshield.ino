@@ -6,8 +6,7 @@ int DOOR2 = D4;
 const int D1sensor = D0;
 //Door2 Sensor
 const int D2sensor = D1;
-int maglg = 0;
-int magsm = 0;
+
 
 
 void setup()
@@ -55,8 +54,6 @@ int obtainStatus(String command)
 {
     if(command == "Status")
     {
-        //maglg = digitalRead(D1sensor);
-        //magsm = digitalRead(D2sensor);
         if((digitalRead(D1sensor) == HIGH)&(digitalRead(D2sensor) == HIGH)){
             Particle.publish("status", "both doors are open", PRIVATE);
         }
