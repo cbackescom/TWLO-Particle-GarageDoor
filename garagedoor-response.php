@@ -28,7 +28,7 @@
         {
         $url = $statusURL;
         //pass your particle access token below
-        $data = array('access_token' => 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', 'params' => $door);
+        $data = array('access_token' => $key, 'params' => $door);
         $options = array(
                 'http' => array(
                 'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
