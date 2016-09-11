@@ -17,11 +17,11 @@
         if($_REQUEST['Body'] == "Status"){
                 $door = 'Status';
                 $statusURL = 'https://api.particle.io/v1/devices/'.$deviceID.'/status';
-        }else if ($_REQUEST['Body'] == "Lg"){
-                $door = 'lg';
+        }else if ($_REQUEST['Body'] == "D0"){
+                $door = 'D0';
                 $statusURL = 'https://api.particle.io/v1/devices/'.$deviceID.'/relay';
-        }else if ($_REQUEST['Body'] == "Sm"){
-                $door = 'sm';
+        }else if ($_REQUEST['Body'] == "D1"){
+                $door = 'D1';
                 $statusURL = 'https://api.particle.io/v1/devices/'.$deviceID.'/relay';
         }
 
