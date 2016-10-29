@@ -1,5 +1,5 @@
 <?php
-
+    
     // array of approved senders, indexed by phone number
     $people = array(
         "+15555551234"=>"DAD",
@@ -13,14 +13,20 @@
 
         $key =   'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'; //put in your particle API key here
         $deviceID = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX'; //put your particle device ID here
-
-        if($_REQUEST['Body'] == "Status"){
+        $bodyvar1 = ($_REQUEST['Body']);
+        $bodyvar2 = "Status";
+        //added variables so you can name the doors
+        //updated if statements to include string case comparison which makes it more seamless to use with 'OK Google'
+        $bodyvar3 = "Large"; //the name you provide here will be referenced in the body of the sms you send. can be anything...
+        $bodyvar4 = "Small"; //the name you provide here will be referenced in the body of the sms you send. can be anything...
+        
+        if(strcasecmp($bodyvar1, $bodyvar2) == 0){
                 $door = 'Status';
                 $statusURL = 'https://api.particle.io/v1/devices/'.$deviceID.'/status';
-        }else if ($_REQUEST['Body'] == "D0"){
+        }else if (strcasecmp($bodyvar1, $bodyvar3) == 0){
                 $door = 'D0';
                 $statusURL = 'https://api.particle.io/v1/devices/'.$deviceID.'/relay';
-        }else if ($_REQUEST['Body'] == "D1"){
+        }else if (strcasecmp($bodyvar1, $bodyvar4) == 0){
                 $door = 'D1';
                 $statusURL = 'https://api.particle.io/v1/devices/'.$deviceID.'/relay';
         }
